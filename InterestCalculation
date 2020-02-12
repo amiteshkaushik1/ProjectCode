@@ -1,0 +1,60 @@
+// Below code shows implementation of open closed principle, one of the principles of SOLID principles. 
+// Here I am calculating the interest of two different types of bank accounts ("Salary" and "Regular"), the below method "CalculateInterest"
+// is voilating the open closed principle, since there can be many other types of accounts in future, so we have to keep adding more and more
+// "If else" conditions as shown below.
+Public class SavingAccount  
+{  
+    //Other method and property and code  
+    Public decimal CalculateInterest(AccountType accountType)  
+    {  
+        If(AccountType==”Regular”)  
+        {  
+            //Calculate interest for regular saving account based on rules and   
+            // regulation of bank  
+            Interest = balance * 0.4;  
+            If(balance < 1000) interest -= balance * 0.2;  
+            If(balance < 50000) interest += amount * 0.4;  
+        }  
+        else if(AccountType==”Salary”)  
+        {  
+            //Calculate interest for saving account based on rules and regulation of   
+            //bank  
+            Interest = balance * 0.5;  
+        }  
+    }  
+}  
+
+//*********************************************************//
+
+// The way I have shown below follows the Open Closed principle
+// Here there is an Interface "ISavingAccount" where I have declared a method "CalculateInterest" multiple classes can inherit this
+// method and define in there own way. This makes code more maintainable and redable even if the complexity of project grows big.
+
+Interface ISavingAccount  
+{  
+   //Other method and property and code  
+   decimal CalculateInterest();  
+}  
+Public Class RegularSavingAccount : ISavingAccount  
+{  
+  //Other method and property and code related to Regular Saving account  
+  Public decimal CalculateInterest()  
+  {  
+    //Calculate interest for regular saving account based on rules and   
+    // regulation of bank  
+    Interest = balance * 0.4;  
+    If(balance < 1000) interest -= balance * 0.2;  
+    If(balance < 50000) interest += amount * 0.4;  
+  }  
+}  
+  
+Public Class SalarySavingAccount : ISavingAccount  
+{  
+  //Other method and property and code related to Salary Saving account`  
+  Public decimal CalculateInterest()  
+  {  
+    //Calculate interest for saving account based on rules and regulation of   
+    //bank  
+    Interest = balance * 0.5;  
+  }  
+}  
