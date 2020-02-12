@@ -1,0 +1,22 @@
+// Below is my current project description
+
+Online Dashboard is an web application to display user fed data in different graphical formats to other users. 
+For graphical representation JQuery highcharts has been used. It has excel upload features where users can upload excel sheet data 
+by logging in to an admin panel. Which in-turn shows the excel data into graphical format.
+
+It has one admin panel where admin can all register users. With each registration admin receives email and admin has authority to accept
+or reject user in the application. Rejected usres will not be able to login
+
+//*****New festures used********//
+1.) JQuery highcharts for all graphical represtaions
+    Highcharts is a lightweight JQuery chart which accepts data in JSON format and shows data in graphical format it includes all types 
+    graphs ex : Line chart, Bar chart, Area Chart, Pie chart, Doughnut Chart, Mixed chart as well as 3D charts.
+    
+2.) EPPLUS dll for all excel uploads
+    2.1) The library is very well written and API's are user-friendly, very much identical to Interop.excel
+    2.2) Performance is big big gain while using EPPlus. Thousands of cells can be read/written in a matter of seconds.
+    2.3) It can generate file only in xlsx format. No facility of xls. But one can always download the Microsoft Compatibility pack to 
+         overcome this problem.
+
+
+
